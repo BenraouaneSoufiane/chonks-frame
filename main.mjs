@@ -2,7 +2,7 @@ import https from 'https';
 import fs from 'fs';
 import express from 'express';
 import axios from 'axios';
-import { cachedDataVersionTag } from 'v8';
+
 var options = {
     key: fs.readFileSync('key.pem'),
     cert: fs.readFileSync('crt.pem'),
@@ -11,8 +11,6 @@ var options = {
 const app = express();
 // Change this based on your astro.config.mjs, `base` option.
 // They should match. The default value is "/".
-const base = '/';
-app.use(base, express.static('dist/client/'));
 app.use(express.json());
 
 const newOne = async function(){
@@ -44,6 +42,7 @@ app.get('/chonk',async(req,res)=>{
       <meta property="og:image" content="${r[1]}" />
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="${r[1]}" />
+      <meta name="fc:frame:image:aspect_ratio" content="1:1"/>
       <meta name="fc:frame:button:1" content="#${r[0]}"/>
       <meta name="fc:frame:button:1:action" content="link"/>
       <meta name="fc:frame:button:1:target" content="https://opensea.io/assets/base/0x07152bfde079b5319e5308c43fb1dbc9c76cb4f9/${r[0]}"/>
@@ -62,6 +61,7 @@ app.get('/chonk',async(req,res)=>{
         <meta property="og:image" content="${r[1]}" />
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="${r[1]}" />
+        <meta name="fc:frame:image:aspect_ratio" content="1:1"/>
         <meta name="fc:frame:button:1" content="#${r[0]}"/>
         <meta name="fc:frame:button:1:action" content="link"/>
         <meta name="fc:frame:button:1:target" content="https://opensea.io/assets/base/0x07152bfde079b5319e5308c43fb1dbc9c76cb4f9/${r[0]}"/>
