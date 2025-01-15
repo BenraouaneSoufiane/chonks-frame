@@ -35,10 +35,10 @@ const newOne = async function(){
         throw new Error("Failed to fetch NFT metadata");
     }
 }
-app.get('/chonk',async(req,res)=>{ 
+app.get('/chonks',async(req,res)=>{ 
     const r =  await newOne();
     res.send(`<!DOCTYPE html><html><head>
-      <title>Chonk NFTs</title>
+      <title>The Chonks's NFTs</title>
       <meta property="og:image" content="${r[1]}" />
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="${r[1]}" />
@@ -48,16 +48,16 @@ app.get('/chonk',async(req,res)=>{
       <meta name="fc:frame:button:1:target" content="https://opensea.io/assets/base/0x07152bfde079b5319e5308c43fb1dbc9c76cb4f9/${r[0]}"/>
       <meta name="fc:frame:button:2" content="#?"/>
       <meta name="fc:frame:button:2:action" content="post"/>
-      <meta name="fc:frame:button:2:target" content="https://frames.cryptocheckout.co/chonk/other"/>
+      <meta name="fc:frame:button:2:target" content="https://frames.cryptocheckout.co/chonks/other"/>
       
       </head></html>`);
   });
-  app.post('/chonk/other',async(req,res)=>{ 
+  app.post('/chonks/other',async(req,res)=>{ 
 
     const r =  await newOne();
 
     res.send(`<!DOCTYPE html><html><head>
-        <title>Chonk NFTs</title>
+        <title>The Chonks's NFTs</title>
         <meta property="og:image" content="${r[1]}" />
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="${r[1]}" />
@@ -67,7 +67,7 @@ app.get('/chonk',async(req,res)=>{
         <meta name="fc:frame:button:1:target" content="https://opensea.io/assets/base/0x07152bfde079b5319e5308c43fb1dbc9c76cb4f9/${r[0]}"/>
         <meta name="fc:frame:button:2" content="#?"/>
         <meta name="fc:frame:button:2:action" content="post"/>
-        <meta name="fc:frame:button:2:target" content="https://frames.cryptocheckout.co/chonk/other"/>
+        <meta name="fc:frame:button:2:target" content="https://frames.cryptocheckout.co/chonks/other"/>
         
         </head></html>`);
   });
